@@ -1,0 +1,30 @@
+/* components/Confetti.css */
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--color);
+  animation: confetti-fall var(--duration) var(--delay) linear forwards;
+  transform: translate(var(--x), var(--y)) rotate(var(--rotation));
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translate(var(--x), -100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(calc(var(--x) + 20vw), 200vh) rotate(720deg);
+    opacity: 0;
+  }
+}
